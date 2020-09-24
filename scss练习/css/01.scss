@@ -1,0 +1,51 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+@mixin fix{
+	width: 100%;
+	background: black;
+	color: white;
+	text-align: center;
+	
+}
+.fixclert::after{
+	content: "";
+	display: block;
+	clear: both;
+}
+// 主体
+#cont{
+	width: 800px;
+	height: 600px;
+	border: 1px solid black;
+	margin:20px auto 0;
+	// 头部
+	.header{
+		@include fix;
+		height: 20%;
+		line-height: 100px;
+	}
+   .main{
+	   width: 100%;
+	   height: 70%;
+	   background: beige;
+	   .left{
+		   float: left;
+		   width: 400px;
+		   height: 100%;
+		   background: skyblue;
+	   }
+	   .right{
+		   float: right;
+		   width: 400px;
+		   height: 100%;
+		   background: forestgreen;
+	   }
+   }
+   .bottom{
+	   @include fix; 
+		 height: 10%;
+		 line-height: 60px;
+   }
+}

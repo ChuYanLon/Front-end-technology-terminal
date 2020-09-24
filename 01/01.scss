@@ -1,0 +1,49 @@
+$red:red;
+$blue:blue;
+@mixin green($mo){
+  background: $mo;
+}
+@function mia($val){
+  @return 'background: $val';
+}
+div{
+  ul{
+    li{
+      color: $red;
+      border:{
+        color: $blue;
+      }
+      &:hover{
+        background: yellow;
+      }
+      &:nth-child(1){
+        @include green(green)
+      }
+      &:nth-last-child(1){
+        @if 1>2 {
+           background: darkmagenta;
+           @error('出错了')
+        } @else{
+          background: mia(red);
+        }
+      }
+    }
+  }
+}
+@
+.T1{
+  color: black;
+}
+.T2{
+  @extend .T1;
+  background: cornflowerblue;
+}
+@for $var from 1 to 2 {
+  .T#{$val}{
+    width: 100px;
+    height: 500px;
+  }
+}
+/*!
+  现在我说的都是机密文件里面的内容，大家注意听
+*/
